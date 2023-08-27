@@ -1,0 +1,85 @@
+/* global styles */
+
+:root {
+    --primary-color: #222831;
+    --secondary-color: #00ADB5;
+    --primary-white: #FFFFFF;
+    --secondary-white: #EEEEEE;
+    --primary-border: #393E46;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    min-height: 100dvh;
+    font-family: Helvetica, Arial, sans-serif;
+
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
+}
+
+/* header */
+header {
+    background-color: var(--primary-white);   
+}
+
+/* siderbar */
+aside {
+    background-color: var(--primary-color);
+    color: var(--primary-white);
+    font-size: 2rem;
+
+    display: grid;
+    grid-template-rows: min-content min-content min-content;
+    gap: 3em;
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+
+.nav {
+    margin: 0 1em;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.nav > div {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.logo {
+    font-size: 2.5rem;
+    margin: .5em .5em 0 .5em ;
+    display: flex;
+    align-items: center;    
+    gap: .5em;
+}
+
+aside img {
+    padding: 0;
+    margin: 0;
+    width: 12%;
+    filter: invert(100%) sepia(0%) saturate(1471%) hue-rotate(196deg) brightness(108%) contrast(101%);
+}
+
+.logo img {
+    width: 20%;        
+}
+
+/* main */
+main {
+    background-color: var(--secondary-white);
+}
