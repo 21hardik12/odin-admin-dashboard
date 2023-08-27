@@ -4,7 +4,7 @@
     --primary-color: #222831;
     --secondary-color: #00ADB5;
     --primary-white: #FFFFFF;
-    --secondary-white: #EEEEEE;
+    --secondary-white: #E2E8F0;
     --primary-border: #393E46;
 }
 
@@ -20,12 +20,12 @@ html {
 
 body {
     font-size: 1.6rem;
-    min-height: 100dvh;
+    min-height: 100vh;
     font-family: Helvetica, Arial, sans-serif;
 
     display: grid;
     grid-template-columns: 1fr 4fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: min-content min-content;
 }
 
 ul, li {
@@ -33,29 +33,32 @@ ul, li {
     list-style: none;
 }
 
+h2 {
+    margin-bottom: 1rem;
+}
+
 /* header */
 header {
-    background-color: var(--primary-white);   
-    /* display: grid;     */
+    background-color: var(--primary-white);       
 }
 
 header input {
     border: none;
     width: 60%;
-    height: 2em;
+    height: 2rem;
     border-radius: 20px;
     background-color: var(--secondary-white);
 }
 
 header .top {
-    margin: 1em;
-    padding-right: 4em;   
-    padding-left: 1em;
+    margin: 1rem;
+    padding-right: 6rem;   
+    padding-left: 1rem;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 1.5em;
+    gap: 2rem;
 }
 
 .top p {
@@ -81,7 +84,7 @@ header img {
 }
 
 header .bottom {
-    margin: 1em;
+    margin: 1rem;
 
     display: flex;
 }
@@ -89,25 +92,27 @@ header .bottom {
 .bottom .greet {
     font-size: 2rem;
     font-weight: bold;
-    padding-left: .7em;
+    padding-left: 1rem;
 
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 2rem;
 }
 
 .bottom ul {
-    padding-right: 3em;
+    padding-right: 6rem;
 
     display: flex;
     align-items: center ;
-    gap: 2em;
+    gap: 4rem;
 }
 
 .bottom button {
     font-size: 1.6rem;
-    width: 5em;
-    height: 2em;    
+    width: 8rem;
+    /* width: 5em;
+    height: 2em;     */
+    aspect-ratio: 5/2;
     border: none;
     border-radius: 30px;
     background-color: var(--secondary-color);
@@ -128,31 +133,31 @@ aside {
 
     display: grid;
     grid-template-rows: min-content min-content min-content;
-    gap: 3em;
+    gap: 6rem;
     grid-row: 1/3;
     grid-column: 1/2;
 }
 
 .nav {
-    margin: 0 1em;
+    margin: 0 1.6rem;
 
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 1.6rem;
 }
 
 .nav > div {
     display: flex;
     align-items: center;
-    gap: 1em;
+    gap: 1.6rem;
 }
 
 .logo {
     font-size: 2.5rem;
-    margin: .5em .5em 0 .5em ;
+    margin: 1rem 1rem 0 1rem ;
     display: flex;
     align-items: center;    
-    gap: .5em;
+    gap: 1rem;
 }
 
 aside img {
@@ -169,4 +174,96 @@ aside img {
 /* main */
 main {
     background-color: var(--secondary-white);
+    padding: 2rem 1rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.main-content {
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.main-content article {
+    display: grid;   
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(50ch, 1fr));
+}
+
+.main-content .card {
+    width: 100%;
+    aspect-ratio: 2/1;
+    background-color: var(--primary-white);
+    padding: 3rem;
+    border-left: 10px solid var(--secondary-color);
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card p:first-child {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card p:nth-child(2) {
+    font-size: 1.6rem;
+    color: #8b8b8b;
+    margin-bottom: auto;
+}
+
+.card > div{
+    margin-top: auto;
+
+    display: flex;
+    justify-content: flex-end;    
+    gap: 2rem;
+}
+
+.card img {
+    padding: 0;
+    margin: 0;
+    min-width: 25px;
+    width: 3%;
+}
+
+.announcement-and-trending {
+    grid-column: 2/3;
+
+    display: grid;
+    gap: 3rem;
+}
+
+.side-content {    
+    min-width: 20ch;
+    width: 30ch;
+    max-width: 40ch;
+    height: min-content;    
+}
+
+.side-content article {    
+    padding: 2rem;        
+    background-color: var(--primary-white);
+}
+
+.side-content p {
+    font-size: 1.6rem;
+    color: #8b8b8b;
+}
+
+.side-content article > div {
+    margin: 2rem 0;
+}
+
+.side-content:nth-child(2) article > div {
+    display: flex;
+    align-items: center;
+}
+
+.side-content:nth-child(2) img {
+    min-width: 2.5rem;       
+    width: 20%;
+    border-radius: 50%;
+    margin-right: 1rem;
 }
